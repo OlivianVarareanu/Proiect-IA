@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from problema_regine import backtracking as queens_backtracking
 from problema_regine import hill_climbing as queens_hill_climbing
 from problema_regine import simulated_annealing as queens_simulated_annealing
@@ -6,10 +6,10 @@ from problema_regine import genetic_algorithm as queens_genetic_algorithm
 #from problema_regine import plotting as queens_plotting
 from problema_comis_voiajorului import backtracking as tsp_backtracking
 from problema_comis_voiajorului import nearest_neighbor as tsp_nearest_neighbor
-from problema_comis_voiajorului import plotting as tsp_plotting
+#from problema_comis_voiajorului import plotting as tsp_plotting
 
 def display_info():
-    print("Program realizat de Varareanu Vasile Olivian, grupa 3133A")
+    print("Program realizat de Varareanu Vasile Olivian, Guliciuc Denis, Robert Timoficiuc, grupa 3133A")
 
 example_points = [(0, 0), (1, 2), (3, 4), (5, 6)]
 
@@ -63,8 +63,8 @@ def main():
         #     queens_plotting.plot_queens_graph()  # Apelăm funcția din modulul de plotare a problemei celor N regine
 
         elif option == 'f':
-            n = int(input("Introduceți numărul de regine (N): "))
-            solution = tsp_backtracking.solve_n_queens_backtracking(n)
+            
+            solution = tsp_nearest_neighbor.solve_tsp_nearest_neighbor(example_points)
             if solution:
                 print("Soluție găsită folosind algoritmul de simulare a anelării:")
                 print(solution)
@@ -72,7 +72,7 @@ def main():
                 print("Nu s-a găsit o soluție în numărul specificat de iterații.")
         elif option == 'g':
 
-            n = int(input("Introduceți numărul de regine (N): "))
+            
             solution = tsp_nearest_neighbor.solve_tsp_nearest_neighbor(example_points)
             if solution:
                 print("Soluție găsită folosind algoritmul de simulare a anelării:")
@@ -81,7 +81,8 @@ def main():
                 print("Nu s-a găsit o soluție în numărul specificat de iterații.")
 
         elif option == 'h':
-            tsp_plotting.plot_tsp_graph()  # Apelăm funcția din modulul de plotare a problemei comis-voiajorului
+            break
+           # tsp_plotting.plot_tsp_graph()  # Apelăm funcția din modulul de plotare a problemei comis-voiajorului
         elif option == 'x':
             display_info()
         elif option == 'y':
